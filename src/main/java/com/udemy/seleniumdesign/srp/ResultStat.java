@@ -1,5 +1,5 @@
 package com.udemy.seleniumdesign.srp;
-// srp -> single responsibility package
+// srp -> single responsibility principle
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

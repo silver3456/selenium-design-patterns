@@ -5,6 +5,7 @@ import com.udemy.seleniumdesign.srp.GoogleResultPage;
 import com.udemy.seleniumdesign.test.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class GoogleTest extends BaseTest {
@@ -18,11 +19,8 @@ public class GoogleTest extends BaseTest {
         this.googleResultPage = new GoogleResultPage(driver);
     }
 
-    @Test
-    public void googleWorkFlowTest() {
-        String keyword = "selenium webdriver";
-        int index = 3;
-
+    @Test(dataProvider = "getData")
+    public void googleWorkFlowTest(String keyword, int index) {
         this.googleMainPage.goTo();
         Assert.assertTrue(googleMainPage.getSearchWidget().isDisplayed());
 
@@ -42,5 +40,13 @@ public class GoogleTest extends BaseTest {
         System.out.println(
                 googleResultPage.getResultStat().getStat()
         );
+    }
+
+    @DataProvider
+    public Object[][] getData() {
+        return new Object[][] {
+                {"selenium", 3},
+                {"docker", 2}
+        };
     }
 }
