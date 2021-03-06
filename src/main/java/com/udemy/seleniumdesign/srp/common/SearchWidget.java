@@ -1,10 +1,10 @@
-package com.udemy.seleniumdesign.srp;
+package com.udemy.seleniumdesign.srp.common;
 
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.udemy.seleniumdesign.srp.common.AbstractComponent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
