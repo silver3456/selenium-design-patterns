@@ -20,7 +20,7 @@ public class CreditCard implements PaymentOption {
     @Override
     public void enterPaymentInformation(Map<String, String> paymentDetails) {
     this.cc.sendKeys(paymentDetails.get("cc"));
-    this.cc.sendKeys(paymentDetails.get("year"));
-    this.cc.sendKeys(paymentDetails.get("cvv"));
+    this.year.sendKeys(paymentDetails.get("year"));
+    this.cvv.sendKeys(paymentDetails.get("cvv"));
     }
 }

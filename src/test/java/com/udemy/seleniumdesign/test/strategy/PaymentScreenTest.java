@@ -21,10 +21,10 @@ public class PaymentScreenTest extends BaseTest {
     }
 
     @Test(dataProvider = "getData")
-    public void paymentTest(PaymentOption paymentOption, Map<String, String> paymentDetails) {
+    public void paymentTest(String option, Map<String, String> paymentDetails) {
         this.paymentScreen.goTo();
         this.paymentScreen.getUserInformation().enterDetails("alex", "seliverov", "alex@test.com");
-        this.paymentScreen.setPaymentOption(paymentOption);
+        this.paymentScreen.setPaymentOption(PaymentOptionFactory.get(option));
         this.paymentScreen.pay(paymentDetails);
 
         String orderNumber = this.paymentScreen.getOrder().placeOrder();
@@ -55,9 +55,9 @@ public class PaymentScreenTest extends BaseTest {
 
 
         return new Object[][]{
-                {new CreditCard(), cc},
-                {new NetBanking(), nb},
-                {new Paypal(), pp}
+                {"CC", cc},
+                {"NB", nb},
+                {"PP", pp}
         };
     }
 }
