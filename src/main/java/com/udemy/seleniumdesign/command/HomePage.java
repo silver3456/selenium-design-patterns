@@ -12,17 +12,16 @@ public class HomePage {
 
     private final WebDriver driver;
 
-    @FindBy(css = "button.button-box button.btn-info")
+    @FindBy(css = "button.tst1.btn.btn-info")
     private WebElement infoBtn;
 
-    @FindBy(css = "button.button-box button.btn-warning")
+    @FindBy(css = "button.tst2.btn.btn-warning")
     private WebElement warnBtn;
 
-    //buttons
-    @FindBy(css = "button.button-box button.success")
+    @FindBy(css = "button.tst3.btn.btn-success")
     private WebElement successBtn;
 
-    @FindBy(css = "button.button-box button.danger")
+    @FindBy(css = "button.tst4.btn.btn-danger")
     private WebElement dangerBtn;
 
     //notifications
