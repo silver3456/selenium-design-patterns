@@ -38,16 +38,16 @@ public class HomePage {
     private WebElement danderAlert;
 
     //dismissal alert
-    @FindBy(css = "div.alert-info")
+    @FindBy(css = "div.col-lg-4.col-md-12:nth-child(2) div.alert-info")
     private WebElement dismissInfoAlert;
 
-    @FindBy(css = "div.alert-success")
+    @FindBy(css = "div.col-lg-4.col-md-12:nth-child(2) div.alert-success")
     private WebElement dismissSuccessAlert;
 
-    @FindBy(css = "div.alert-danger")
+    @FindBy(css = "div.col-lg-4.col-md-12:nth-child(2) div.alert-danger")
     private WebElement dismissDangerAlert;
 
-    @FindBy(css = "div.alert-warning")
+    @FindBy(css = "div.col-lg-4.col-md-12:nth-child(2) div.alert-warning")
     private WebElement dismissWarningAlert;
 
 
@@ -65,15 +65,15 @@ public class HomePage {
 
         return Arrays.asList(
                 //notification
-                new NotificationValidator(infoBtn, infoAlert),
-                new NotificationValidator(successBtn, successAlert),
-                new NotificationValidator(warnBtn, warnAlert),
-                new NotificationValidator(dangerBtn, danderAlert),
+                new NotificationValidator(driver,infoBtn, infoAlert),
+                new NotificationValidator(driver,successBtn, successAlert),
+                new NotificationValidator(driver,warnBtn, warnAlert),
+                new NotificationValidator(driver,dangerBtn, danderAlert),
                 //dismiss
-                new DissmissalAlertValidator(dismissInfoAlert),
-                new DissmissalAlertValidator(dismissSuccessAlert),
-                new DissmissalAlertValidator(dismissWarningAlert),
-                new DissmissalAlertValidator(dismissDangerAlert)
+                new DissmissalAlertValidator(driver, dismissInfoAlert),
+                new DissmissalAlertValidator(driver, dismissSuccessAlert),
+                new DissmissalAlertValidator(driver, dismissWarningAlert),
+                new DissmissalAlertValidator(driver, dismissDangerAlert)
         );
     }
 

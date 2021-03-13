@@ -1,7 +1,8 @@
 package com.udemy.seleniumdesign.test.strategy;
 
 import com.google.common.util.concurrent.Uninterruptibles;
-import com.udemy.seleniumdesign.strategy.*;
+import com.udemy.seleniumdesign.strategy.PaymentOptionFactory;
+import com.udemy.seleniumdesign.strategy.PaymentScreen;
 import com.udemy.seleniumdesign.test.BaseTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
